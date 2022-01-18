@@ -47,4 +47,18 @@ class ListNodeTest {
         );
     }
 
+    @Test
+    void testCreateCycleList() {
+        ListNode l1 = ListNode.newList(1, 2, 3);
+        ListNode head = l1;
+        while (l1.next != null) {
+            l1 = l1.next;
+        }
+        l1.next = head;
+        ListNode current = head;
+        while (current != null) {
+            System.out.println(current.val);
+            current = current.next;
+        }
+    }
 }

@@ -11,10 +11,18 @@ public class ListNode {
         this.val = val;
     }
 
-    ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
+    public ListNode tail(){
+        ListNode cur = this;
+        while (cur.next != null) {
+            cur = cur.next;
+        }
+        return cur;
     }
+
+//    ListNode(int val, ListNode next) {
+//        this.val = val;
+//        this.next = next;
+//    }
 
     /**
      * Example:
